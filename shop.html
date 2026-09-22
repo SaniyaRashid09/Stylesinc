@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop | StyleSync</title>
+
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">StyleSync</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="#">Looks</a>
+            <a href="#">Try-On</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="#">♡</a>
+            <a href="#">🛒</a>
+            <a href="login.html">Login</a>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="shop-hero">
+            <p>STYLE YOUR WAY</p>
+
+            <h1>Find your next look.</h1>
+
+            <span>
+                Explore clothing, accessories and complete looks curated for you.
+            </span>
+        </section>
+
+        <div class="shop-search">
+            <input type="text" placeholder="Search clothing, shoes, bags...">
+            <button>Search</button>
+        </div>
+
+        <section class="categories">
+
+            <button class="category active">All</button>
+            <button class="category">Dresses</button>
+            <button class="category">Tops</button>
+            <button class="category">Bottoms</button>
+            <button class="category">Shoes</button>
+            <button class="category">Bags</button>
+            <button class="category">Accessories</button>
+
+        </section>
+
+
+        <section class="shop-products">
+
+            <a href="product.html" class="product-card" data-category="tops,bottoms,shoes,bags,accessories">
+
+                <div class="product-image">
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/casual.jpg" alt="Casual outfit">
+                </div>
+
+                <div class="product-info">
+                    <p>CASUAL EDIT</p>
+                    <h3>Everyday Essential Look</h3>
+                    <span>Complete Look</span>
+                    <strong>₹2,499</strong>
+                </div>
+
+            </a>
+
+
+            <a href="product.html?id=party" class="product-card" data-category="dresses">
+
+                <div class="product-image">
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/party.jpg" alt="Party outfit">
+                </div>
+
+                <div class="product-info">
+                    <p>PARTY EDIT</p>
+                    <h3>Chic Evening Look</h3>
+                    <span>Complete Look</span>
+                    <strong>₹3,499</strong>
+                </div>
+
+            </a>
+
+
+            <a href="product.html?id=modern" class="product-card" data-category="dresses,accessories,bodycon, Modern">
+
+                <div class="product-image">
+                    <button class="wishlist-btn">♡</button>
+                    <img src="images/bodycon.jpg" alt="Modern outfit">
+                </div>
+
+                <div class="product-info">
+                    <p>MODERN EDIT</p>
+                    <h3>Modern Mood</h3>
+                    <span>Complete Look</span>
+                    <strong>₹2,999</strong>
+                </div>
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 StyleSync — Your style. Reimagined.</p>
+    </footer>
+<script src="shop.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #faf9f6;
+    color: #171717;
+}
+
+/* Navbar */
+
+.navbar {
+    height: 80px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #faf9f6;
+    border-bottom: 1px solid #eeeae4;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #171717;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Product */
+
+.product-detail {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.product-detail-image {
+    background: #eeeae4;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.product-detail-image img {
+    width: 100%;
+    display: block;
+}
+
+.product-detail-info {
+    max-width: 480px;
+}
+
+.product-label {
+    color: #9a7b6c;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.product-detail-info h1 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.product-description {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* Size */
+
+.size-section h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.sizes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.sizes button {
+    width: 52px;
+    height: 45px;
+    background: white;
+    border: 1px solid #ddd7d0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sizes button:hover {
+    background: #171717;
+    color: white;
+}
+
+/* Buttons */
+
+.add-cart,
+.try-on {
+    width: 100%;
+    height: 52px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.add-cart {
+    background: #171717;
+    color: white;
+    border: 1px solid #171717;
+    margin-bottom: 12px;
+}
+
+.try-on {
+    background: transparent;
+    color: #171717;
+    border: 1px solid #171717;
+}
+
+.add-cart:hover {
+    opacity: 0.85;
+}
+
+.try-on:hover {
+    background: #171717;
+    color: white;
+}
