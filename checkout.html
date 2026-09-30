@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | StyleSync</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">StyleSync</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="#">Looks</a>
+        <a href="#">Try-On</a>
+    </nav>
+
+    <div class="nav-actions">
+        <a href="#">♡</a>
+        <a href="cart.html">🛒</a>
+        <a href="login.html">Login</a>
+    </div>
+
+</header>
+
+
+<main class="checkout-page">
+
+    <p class="checkout-label">SECURE CHECKOUT</p>
+
+    <h1>Complete your order</h1>
+
+
+    <section class="checkout-box">
+
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="order-summary">
+
+            <h2>Order Summary</h2>
+
+            <div id="order-item"></div>
+
+        </div>
+
+
+        <!-- DELIVERY DETAILS -->
+
+        <div class="customer-details">
+
+            <h2>Delivery Details</h2>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+            >
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+            >
+
+            <input
+                type="text"
+                id="address"
+                placeholder="Address"
+            >
+
+            <input
+                type="text"
+                id="city"
+                placeholder="City"
+            >
+
+            <input
+                type="text"
+                id="pincode"
+                placeholder="PIN Code"
+            >
+
+            <button onclick="placeOrder()">
+                Place Order
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+    const cart = JSON.parse(
+        localStorage.getItem("stylesyncCart")
+    );
+
+    const orderItem = document.getElementById("order-item");
+
+
+    // Show cart item
+
+    if (cart) {
+
+        orderItem.innerHTML = `
+            <img src="${cart.image}" alt="${cart.name}">
+
+            <div>
+                <h3>${cart.name}</h3>
+
+                <p>Size: ${cart.size}</p>
+
+                <strong>${cart.price}</strong>
+            </div>
+        `;
+
+    } else {
+
+        orderItem.innerHTML = `
+            <p>Your cart is empty.</p>
+        `;
+
+    }
+
+
+    // Place order
+
+    function placeOrder() {
+
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const address = document.getElementById("address").value.trim();
+        const city = document.getElementById("city").value.trim();
+        const pincode = document.getElementById("pincode").value.trim();
+
+
+        if (!cart) {
+            alert("Your cart is empty.");
+            return;
+        }
+
+
+        if (!name || !phone || !address || !city || !pincode) {
+
+            alert("Please fill in all delivery details.");
+
+            return;
+        }
+
+
+        if (phone.length < 10) {
+
+            alert("Please enter a valid phone number.");
+
+            return;
+        }
+
+
+        if (pincode.length !== 6) {
+
+            alert("Please enter a valid 6-digit PIN code.");
+
+            return;
+        }
+
+
+        // Clear cart
+
+        localStorage.removeItem("stylesyncCart");
+
+
+        // Success
+
+        alert("Order placed successfully!");
+
+
+        // Go back to shop
+
+        window.location.href = "shop.html";
+
+    }
+
+</script>
+
+</body>
+
+</html>

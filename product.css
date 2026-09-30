@@ -158,3 +158,9 @@ body {
     background: #171717;
     color: white;
 }
+
+.sizes button.selected {
+  background: #171717;
+  color: white;
+  border-color: #171717;
+}

@@ -23,7 +23,7 @@ const products = {
         description: "A contemporary look combining clean silhouettes with a modern fashion mood."
     }
 };
-
+       
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
@@ -44,4 +44,24 @@ sizeButtons.forEach(button => {
         sizeButtons.forEach(btn => btn.classList.remove("selected"));
         button.classList.add("selected");
     });
+});
+
+document.querySelector(".add-cart").addEventListener("click", () => {
+    const selectedSize = document.querySelector(".sizes button.selected");
+
+    if (!selectedSize) {
+        alert("Please select a size first.");
+        return;
+    }
+
+    const cartItem = {
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        size: selectedSize.textContent
+    };
+
+    localStorage.setItem("stylesyncCart", JSON.stringify(cartItem));
+
+    alert("Added to cart!");
 });

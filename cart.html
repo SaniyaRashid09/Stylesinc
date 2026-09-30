@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | StyleSync</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">StyleSync</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Looks</a>
+            <a href="#">Try-On</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="#">♡</a>
+            <a href="cart.html">🛒</a>
+            <a href="login.html">Login</a>
+        </div>
+    </header>
+
+    <main class="cart-page">
+
+        <p class="cart-label">YOUR SHOPPING BAG</p>
+        <h1>Your Cart</h1>
+
+        <div id="cart-container"></div>
+
+    </main>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem("stylesyncCart"));
+        const container = document.getElementById("cart-container");
+
+        if (!cart) {
+
+            container.innerHTML = `
+            <div class="empty-cart">
+                <h2>Your cart is empty</h2>
+                <p>Add something you love from our shop.</p>
+                <a href="shop.html">Continue Shopping</a>
+            </div>
+        `;
+
+        } else {
+
+            container.innerHTML = `
+            <div class="cart-item">
+
+                <img src="${cart.image}" alt="${cart.name}">
+
+                <div class="cart-info">
+                    <p>STYLESYNC EDIT</p>
+
+                    <h2>${cart.name}</h2>
+
+                    <span>Size: ${cart.size}</span>
+
+                    <strong>${cart.price}</strong>
+                    <button class="checkout-btn" onclick="checkout()">
+    Proceed to Checkout
+</button>
+
+                    <button class="remove-btn" onclick="removeCart()">
+                        Remove Item
+                    </button>
+                </div>
+
+            </div>
+        `;
+        }
+
+        function removeCart() {
+            localStorage.removeItem("stylesyncCart");
+            location.reload();
+        }
+        function checkout() {
+    window.location.href = "checkout.html";
+}
+
+    </script>
+
+
+</body>
+
+</html>
